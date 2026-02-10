@@ -17,8 +17,8 @@ export default defineConfig({
         theme_color: '#0f172a',
         background_color: '#0f172a',
         display: 'standalone',
-        scope: '/',
-        start_url: '/',
+        scope: '/Pegasus_agrithon/',
+        start_url: '/Pegasus_agrithon/',
         orientation: 'portrait',
         icons: [
           {
