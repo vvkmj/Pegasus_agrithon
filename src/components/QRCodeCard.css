@@ -1,0 +1,299 @@
+.qr-card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.qr-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.batch-id {
+    font-family: monospace;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.status-badge {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--color-primary-green);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.qr-code-container {
+    margin-bottom: 24px;
+}
+
+.qr-frame {
+    background: white;
+    padding: 12px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.scan-label {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.batch-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.label {
+    color: var(--color-text-muted);
+}
+
+.value {
+    color: var(--color-text-main);
+    font-weight: 500;
+}
+
+.value.score {
+    color: var(--color-primary-green);
+}
+
+.card-actions {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-main);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+
+/* Print Styles - Professional Label */
+.shipping-label {
+    display: none;
+}
+
+@media print {
+    @page {
+        size: 4in 6in;
+        margin: 0;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    #printable-qr-card {
+        visibility: visible;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: white !important;
+        color: black !important;
+        border: none !important;
+        box-shadow: none !important;
+        display: block;
+        /* Ensure it's block for printing */
+    }
+
+    /* Hide the screen-only UI elements */
+    .qr-header,
+    .qr-code-container,
+    .scan-label,
+    .batch-details,
+    .card-actions {
+        display: none !important;
+    }
+
+    /* Show and Style the Label */
+    .shipping-label {
+        display: flex !important;
+        flex-direction: column;
+        width: 4in;
+        height: 6in;
+        padding: 15px;
+        box-sizing: border-box;
+        border: 2px solid black;
+        font-family: 'Courier New', Courier, monospace;
+        /* Logistics look */
+        visibility: visible;
+    }
+
+    .shipping-label * {
+        visibility: visible;
+    }
+
+    /* Header */
+    .sl-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 2px solid black;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    .sl-brand {
+        font-size: 14pt;
+        font-weight: bold;
+    }
+
+    .sl-priority {
+        border: 2px solid black;
+        padding: 2px 5px;
+        font-weight: bold;
+        font-size: 10pt;
+        letter-spacing: 1px;
+    }
+
+    /* Body */
+    .sl-body {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        flex: 1;
+    }
+
+    .sl-qr-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sl-scan-hint {
+        font-size: 8pt;
+        margin-top: 5px;
+        font-weight: bold;
+    }
+
+    .sl-info-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .sl-batch-id {
+        font-size: 14pt;
+        font-weight: 900;
+        word-break: break-all;
+        line-height: 1.2;
+    }
+
+    .sl-address-block {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sl-label-small {
+        font-size: 7pt;
+        text-transform: uppercase;
+        color: #333;
+    }
+
+    .sl-address-text {
+        font-size: 9pt;
+        line-height: 1.3;
+    }
+
+    /* Footer */
+    .sl-footer {
+        border-top: 2px solid black;
+        padding-top: 10px;
+    }
+
+    .sl-product-details {
+        display: flex;
+        justify-content: space-between;
+        font-size: 10pt;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .sl-handling {
+        text-align: center;
+        font-size: 12pt;
+        font-weight: 900;
+        border: 2px solid black;
+        padding: 5px;
+        margin-bottom: 10px;
+        background-color: #eee !important;
+        /* Will likely print gray or white */
+        -webkit-print-color-adjust: exact;
+    }
+
+    /* Barcode Sim */
+    .sl-barcode-sim {
+        text-align: center;
+    }
+
+    .barcode-strip {
+        height: 30px;
+        background: repeating-linear-gradient(to right,
+                black 0,
+                black 2px,
+                white 2px,
+                white 4px,
+                black 4px,
+                black 8px);
+        margin-bottom: 5px;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .sl-tracking-num {
+        font-size: 8pt;
+        letter-spacing: 2px;
+    }
+}

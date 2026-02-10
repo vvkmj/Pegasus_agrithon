@@ -1,0 +1,13 @@
+.live-map-container {
+    height: 100%;
+    width: 100%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    z-index: 0;
+}
+
+.leaflet-container {
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}

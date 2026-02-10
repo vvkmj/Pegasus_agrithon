@@ -1,0 +1,93 @@
+.form-card {
+    padding: 24px;
+    max-width: 500px;
+}
+
+.card-header {
+    margin-bottom: 24px;
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: var(--color-text-main);
+    margin-bottom: 4px;
+}
+
+p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.row {
+    display: flex;
+    gap: 16px;
+}
+
+.row .form-group {
+    flex: 1;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+input,
+select {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    color: var(--color-text-main);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--color-primary-green);
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--color-primary-green);
+}
+
+.submit-btn {
+    margin-top: 8px;
+    background: linear-gradient(135deg, var(--color-primary-green), #059669);
+    color: white;
+    padding: 14px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}

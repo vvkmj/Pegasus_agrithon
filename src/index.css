@@ -1,0 +1,299 @@
+:root {
+  /* Core Colors - Nature meets Tech */
+  --color-bg-dark: #0f172a;
+  --color-bg-card: #1e293b;
+  --color-primary-green: #10b981;
+  /* Emerald */
+  --color-primary-blue: #3b82f6;
+  /* Royal Blue */
+  --color-accent-purple: #8b5cf6;
+  --color-text-main: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-border: #334155;
+
+  /* Status Colors */
+  --status-good: #22c55e;
+  --status-warning: #f59e0b;
+  --status-critical: #ef4444;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  /* Spacing & Layout */
+  --radius-lg: 16px;
+  --radius-md: 8px;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Base Utilities */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glass Card Utility */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-lg);
+}
+
+/* Typography Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* --- Landing Page Styles --- */
+.landing-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 10%, #1e293b 0%, #0f172a 100%);
+  color: white;
+  padding: 20px;
+}
+
+.landing-content {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.landing-header {
+  margin-bottom: 60px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: var(--color-primary-green);
+}
+
+.logo h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  background: linear-gradient(to right, #10b981, #3b82f6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+}
+
+/* Install Prompt */
+.install-btn {
+  margin-top: 16px;
+  background: white;
+  color: #0f172a;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s;
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.install-btn:hover {
+  transform: scale(1.05);
+  background: #f8fafc;
+}
+
+.ios-install-hint {
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.role-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .role-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.role-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.role-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  border-color: var(--color-primary-green);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-blue);
+  margin-bottom: 8px;
+}
+
+.supplier .card-icon {
+  color: var(--color-primary-green);
+}
+
+.consumer .card-icon {
+  color: var(--color-primary-blue);
+}
+
+.card-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.card-content p {
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.action-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.role-card:hover .action-btn {
+  background: white;
+  color: #0f172a;
+}
+
+/* --- App Layout Styles --- */
+.consumer-mode {
+  min-height: 100vh;
+  background: #0f172a;
+  color: white;
+}
+
+.consumer-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-btn {
+  background: none;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  color: white;
+}
+
+.consumer-content {
+  padding: 40px 20px;
+}
+
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 20%);
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.main-content {
+  padding: 32px;
+  flex: 1;
+}
+
+.supplier-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 32px;
+}
