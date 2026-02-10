@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/Pegasus_agrithon/sw.js', { scope: '/Pegasus_agrithon/' })})}
