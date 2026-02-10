@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">FarmTrace</string>
+    <string name="title_activity_main">FarmTrace</string>
+    <string name="package_name">com.farmtrace.app</string>
+    <string name="custom_url_scheme">com.farmtrace.app</string>
+</resources>
