@@ -3,6 +3,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Pegasus_agrithon/',
   plugins: [
     react(),
     VitePWA({
